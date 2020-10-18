@@ -3,11 +3,11 @@
 // component that houses all of the other components. To 
 // effect any change on the application, we need to either 
 // modify this file or add components inside it.
-import React, { useState }  from 'react';
+import React, { useState } from 'react';
 import About from './components/about';
 import Nav from './components/nav';
 import Gallery from './components/gallery';
-
+import ContactForm from './components/contact';
 function App() {
   const [categories] = useState([
     {
@@ -30,7 +30,8 @@ function App() {
       ></Nav>
       <main>
         <div>
-        <Gallery currentCategory={currentCategory}></Gallery>
+          <ContactForm></ContactForm>
+          <Gallery currentCategory={currentCategory}></Gallery>
           <About></About>
         </div>
       </main>
