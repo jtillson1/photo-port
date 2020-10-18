@@ -9,6 +9,7 @@ import Nav from './components/nav';
 import Gallery from './components/gallery';
 import ContactForm from './components/contact';
 function App() {
+  const [contactSelected, setContactSelected] = useState(false);
   const [categories] = useState([
     {
       name: 'commercial',
@@ -24,15 +25,23 @@ function App() {
   return (
     <div>
       <Nav
-        categories={categories}
-        setCurrentCategory={setCurrentCategory}
-        currentCategory={currentCategory}
+       categories={categories}
+       setCurrentCategory={setCurrentCategory}
+       currentCategory={currentCategory}
+       contactSelected={contactSelected}
+       setContactSelected={setContactSelected}
       ></Nav>
       <main>
-        <div>
-          <ContactForm></ContactForm>
-          <Gallery currentCategory={currentCategory}></Gallery>
-          <About></About>
+    {/* // this is a "ternary operator" */}
+        <div>{!contactSelected ? ( 
+          <> {/*Although in JSX you can only return a single parent element, this rule can be satisfied by wrapping the children components in a React fragmen */}
+            <Gallery currentCategory={currentCategory}></Gallery>
+            <About></About>
+          </>
+        ) : // << this means else 
+          ( 
+            <ContactForm></ContactForm>
+          )}
         </div>
       </main>
     </div>

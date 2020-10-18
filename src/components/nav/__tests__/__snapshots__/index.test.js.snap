@@ -30,11 +30,11 @@ exports[`Nav component matches snapshot 1`] = `
             data-testid="about"
             href="#about"
           >
-            About me
+            &gt; About me
           </a>
         </li>
         <li
-          class="mx-2"
+          class="mx-2 undefined"
         >
           <span>
             Contact
