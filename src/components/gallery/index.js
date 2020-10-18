@@ -1,6 +1,8 @@
+import { cleanup, render } from '@testing-library/react';
 import React from 'react';
 import { capitalizeFirstLetter } from '../../utils/helpers';
 import PhotoList from '../PhotoList';
+
 
 function Gallery({ currentCategory }) {
     const { name, description } = currentCategory;
